@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { image } from "../../Constants";
 
-const Navbar = () => {
+const NavbarAdmin = () => {
+    let location = useLocation();
+
+
     const [active, setActive] = useState(false);
 
     const showMenu = () => {
@@ -22,25 +25,25 @@ const Navbar = () => {
 
 
 
-                <div className="lg:flex lg:space-x-20 sm:hidden">
+                <div className="lg:flex items-center lg:space-x-20 sm:hidden">
 
                     {/* <div className="">
                         <GiHamburgerMenu className="text-gray-400 text-2xl" onClick={showMenu} />
                     </div> */}
 
+                    <Link to="admin/articles">
+                        <p className="font-semibold text-gray-400 hover:text-gray-200 uppercase ease-in duration-300">
+                            Articles
+                        </p>
+                    </Link>
+                    <Link to="admin/projects">
+                        <p className="font-semibold text-gray-400 hover:text-gray-200 uppercase ease-in duration-300">
+                            Projects
+                        </p>
+                    </Link>
                     <Link to="/">
-                        <p className="font-semibold text-gray-400 hover:text-gray-200 uppercase ease-in duration-300">
-                            Home
-                        </p>
-                    </Link>
-                    <Link to="developments">
-                        <p className="font-semibold text-gray-400 hover:text-gray-200 uppercase ease-in duration-300">
-                            Developments
-                        </p>
-                    </Link>
-                    <Link to="projects">
-                        <p className="font-semibold text-gray-400 hover:text-gray-200 uppercase ease-in duration-300">
-                            Project
+                        <p className="font-semibold text-gray-400 border-2 border-gray-400 rounded px-3  hover:text-gray-900 hover:bg-gray-200 uppercase ease-in duration-300">
+                            Log out
                         </p>
                     </Link>
                 </div>
@@ -53,4 +56,4 @@ const Navbar = () => {
 
 };
 
-export default Navbar;
+export default NavbarAdmin;
