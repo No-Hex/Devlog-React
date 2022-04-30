@@ -26,7 +26,7 @@ function AdminProjects() {
                 <div className="flex justify-between">
                     <div className="flex space-x-10 items-center">
                         <div className="">
-                            <img src={image.pem} className='w-80 rounded-lg object-cover' alt="" />
+                            <img src="" className='w-80 rounded-lg object-cover' alt="" />
                         </div>
 
 
