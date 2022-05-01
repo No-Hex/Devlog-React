@@ -1,6 +1,8 @@
 import React from 'react'
 import Modal from 'react-modal'
+import Quill from '../../hooks/quill';
 import { image } from '../../Constants';
+
 
 
 const customStylesModal = {
@@ -25,6 +27,9 @@ const customStylesModal = {
 
     },
 };
+
+
+
 
 Modal.setAppElement("#root");
 
@@ -52,6 +57,7 @@ function AdminArticles() {
     const closeModalPost = () => {
         setIsOpenPost(false);
     }
+
 
 
     return (
@@ -145,6 +151,42 @@ function AdminArticles() {
                                 <button onClick={openModalPost} className='text-gray-200 hover:bg-gray-200 hover:text-gray-900 border-2 border-gray-200 px-8  rounded '>Add Post</button>
                                 <Modal isOpen={modalIsOpenPost} style={customStylesModal}>
 
+                                    <div className="px-5">
+                                        <div className="flex justify-between items-center mt-5">
+                                            <div className="flex items-center lg:space-x-5 sm:space-x-2">
+                                                <img src={image.logo} className="lg:w-10 sm:w-5 md:w-10" alt="" />
+                                                <h3 className='font-bold text-gray-200 sm:text-xs md:text-lg lg:text-2xl uppercase'>Hex Devlog</h3>
+                                            </div>
+
+                                            <div className="">
+                                                <h3 className='font-bold text-gray-200 sm:text-xs md:text-lg lg:text-2xl uppercase'>New Post</h3>
+                                            </div>
+                                        </div>
+
+                                        <div className="mt-16">
+                                            <div className="inline-block space-y-4">
+                                                <label className='text-gray-200 font-medium uppercase'>Post title</label>
+                                                <div className="">
+                                                    <input type="text" name="" id="" className='bg-gray-800 border-2 border-gray-700 px-3 py-2 rounded-lg' placeholder='TITLE' />
+                                                </div>
+                                            </div>
+                                            <div className="mt-10 space-y-4">
+                                                <label className='text-gray-200 font-medium uppercase'>Post Body</label>
+                                                <div className="bg-gray-200 text-gray-900">
+                                                    <Quill />
+                                                </div>
+                                            </div>
+
+                                            <div className="flex items-center justify-between mt-8">
+                                                <div className="">
+                                                    <button onClick={closeModalPost} className='w-96 bg-gray-700 text-gray-200 px-5 py-3 rounded'>Cancel</button>
+                                                </div>
+                                                <div className="">
+                                                    <button className='w-96 bg-gray-200 text-gray-900 px-5 py-3 rounded'>Publish</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </Modal>
                             </div>
                         </div>
@@ -156,7 +198,7 @@ function AdminArticles() {
                         <div className=""><button className='text-gray-400 hover:text-gray-200 ease-in duration-300 text-3xl'><span class="iconify" data-icon="ion:trash-bin-outline"></span></button></div>
                     </div>
                 </div>
-            </div>
+            </div >
 
             <hr className="text-gray-200" />
 
