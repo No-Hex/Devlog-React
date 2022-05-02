@@ -10,8 +10,8 @@ export default () => {
 
 
     return (
-        <div className='w-full'>
-            <div ref={quillRef} />
+        <div className='w-full h-56'>
+            <div ref={quillRef} className='h-full bg-gray-200' />
         </div>
     );
 };

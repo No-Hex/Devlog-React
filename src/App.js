@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Navbar, NavbarAdmin, Footer } from "./Components";
-import { Home, Developments, Projects, Admin, AdminArticles, AdminProjects, ErrorPage, Login } from './Pages'
+import { Home, Developments, Projects, Admin, AdminArticles, AdminProjects, ErrorPage, Login, NewArticle, NewPost } from './Pages'
 import { useAdminPath } from "./hooks/useAdminPath";
 
 function App() {
@@ -18,6 +18,8 @@ function App() {
           {/* Admin Routes */}
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/articles" element={<AdminArticles />} />
+          <Route path="/admin/articles/new-article" element={<NewArticle />} />
+          <Route path="/admin/articles/new-post" element={<NewPost />} />
           <Route path="/admin/projects" element={<AdminProjects />} />
 
           {/* Authentication routes */}
